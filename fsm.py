@@ -1,6 +1,6 @@
 from transitions.extensions import GraphMachine
 
-from utils import send_text_message,send_image_url
+from utils import send_text_message,send_image_url,movie
 
 
 
@@ -14,9 +14,17 @@ class TocMachine(GraphMachine):
 
     def on_enter_hello(self, event):
         reply_token = event.reply_token       
-        send_text_message(reply_token, "你好，我是東京女子診斷機器人，想知道你屬於哪個都市的女子類型嗎？？那就趕快輸入「東京女子診斷」，即可開始遊戲。")        
+        send_text_message(reply_token, "你好，我是東京女子診斷機器人，想知道你屬於哪個都市的女子類型嗎？？那就趕快輸入「東京女子診斷」，即可開始遊戲，輸入「我要看電影」，即可顯示最新電影資訊")        
         self.go_back()
 
+    def is_going_to_movie(self, event):
+        text = event.message.text
+        return text== "我要看電影"
+    def on_enter_movie(self, event):
+        reply_token = event.reply_token
+        a=movie()
+        send_text_message(reply_token, a)
+        self.go_back()      
         
     def is_going_to_q1(self, event):
         text = event.message.text
