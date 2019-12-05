@@ -6,7 +6,7 @@ class TocMachine(GraphMachine):
         
     def is_going_to_hello(self, event):
         text = event.message.text
-        return text== "你好"
+        return text== str("你好")
 
     def on_enter_hello(self, event):
         reply_token = event.reply_token       
