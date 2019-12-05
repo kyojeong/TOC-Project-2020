@@ -115,7 +115,7 @@ class TocMachine(GraphMachine):
         return text.lower()== "交際費"
     def on_enter_q12(self, event):
         reply_token = event.reply_token
-        send_text_message(reply_token, "重視衣服或化妝品等東西的品牌嗎\n1.還是會比較品牌 2.只要可愛都OK")
+        send_text_message(reply_token, "重視衣服或化妝品等東西的品牌嗎\n1.還是會比較品牌 2.只要可愛都可以")
         self.go_back()
         
     def is_going_to_q13(self, event):
@@ -192,7 +192,7 @@ class TocMachine(GraphMachine):
         
     def is_going_to_q22(self, event):
         text = event.message.text
-        return text.lower()== "只要可愛都ok"
+        return text.lower()== "只要可愛都可以"
     def on_enter_q22(self, event):
         reply_token = event.reply_token
         send_text_message(reply_token, "面對失落的人時會\n1.傾聽 2.給予鼓勵")
