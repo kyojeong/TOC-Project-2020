@@ -1,5 +1,4 @@
 from transitions.extensions import GraphMachine
-
 from utils import send_text_message,send_image_url,movie
 class TocMachine(GraphMachine):
     def __init__(self, **machine_configs):
