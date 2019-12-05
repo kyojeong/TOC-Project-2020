@@ -6,7 +6,6 @@ from dotenv import load_dotenv,find_dotenv
 from linebot import LineBotApi, WebhookParser
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
-
 from fsm import TocMachine
 from utils import send_text_message
 dotenv_path = os.path.join(os.path.dirname(__file__), 'example.env')
