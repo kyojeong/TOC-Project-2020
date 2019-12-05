@@ -192,7 +192,7 @@ class TocMachine(GraphMachine):
         
     def is_going_to_q22(self, event):
         text = event.message.text
-        return text.lower()== "只要可愛都OK"
+        return text.lower()== "只要可愛都ok"
     def on_enter_q22(self, event):
         reply_token = event.reply_token
         send_text_message(reply_token, "面對失落的人時會\n1.傾聽 2.給予鼓勵")
