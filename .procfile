@@ -1,1 +1,1 @@
-web: gunicorn --TOC-Project-2020
+web: gunicorn app:kyojeongmake
