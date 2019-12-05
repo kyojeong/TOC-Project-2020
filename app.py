@@ -209,11 +209,11 @@ def webhook_handler():
             continue
         if not isinstance(event.message.text, str):
             continue
-        print(f"\nFSM STATE: {machine.state}")
-        print(f"REQUEST BODY: \n{body}")
+        #print(f"\nFSM STATE: {machine.state}")
+        #print(f"REQUEST BODY: \n{body}")
         response = machine.advance(event)
         if response == False:
-            send_text_message(event.reply_token, str("你說什麼？"))
+            send_text_message(event.reply_token, "你說什麼？")
 
     return "OK"
 
