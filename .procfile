@@ -1,1 +1,1 @@
-web gunicorn app:app
+web: gunicorn TOC-Project-2020:app –preload
