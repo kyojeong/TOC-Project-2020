@@ -14,22 +14,14 @@ class TocMachine(GraphMachine):
         send_text_message(reply_token, "你好，我是東京女子診斷機器人，想知道你屬於哪個都市的女子類型嗎？？那就趕快輸入「東京女子診斷」，即可開始遊戲，輸入「我要看電影」，即可顯示最新電影資訊")        
         self.go_back()
 
-    def is_going_to_husband(self, event):
-        text = event.message.text
-        return text== "我要看老公"
-    def on_enter_husband(self, event):
-        reply_token = event.reply_token
-        send_text_message(reply_token, "請輸入老公的IG帳號")
-        self.go_back()    
+       
     def is_going_to_photo(self, event):
-        global t
-        t = event.message.text
-        return True
+        text= event.message.text
+        return text=="我要看老公"
     
     def on_enter_photo(self, event):
         reply_token = event.reply_token
-        a=photo(t)
-        send_text_message(reply_token,a)
+        send_image(reply_token,"https://scontent-tpe1-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/c0.180.1440.1440a/s640x640/71719149_243909983238957_7365908731299268477_n.jpg?_nc_ht=scontent-tpe1-1.cdninstagram.com\u0026_nc_cat=109\u0026oh=0bac90671ca73283ac6a723e01aa15c5\u0026oe=5E6DED58")
         self.go_back()   
         
     def is_going_to_movie(self, event):
