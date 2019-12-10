@@ -45,6 +45,16 @@ def movie():
     
     return content
 
+def photo(name):
+    target_url = 'https://www.instagram.com/'+name
+    rs = requests.session()
+    res = rs.get(target_url, verify=False)
+    res.encoding = 'utf-8'
+    soup = BeautifulSoup(res.text, 'html.parser')   
+    data=soup.select('div._9AhH0') 
+    
+    return data
+
 
 
 """
