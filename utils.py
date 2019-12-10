@@ -1,7 +1,7 @@
 import os
 from linebot import LineBotApi, WebhookParser
 from linebot.models import MessageEvent, TextMessage, TextSendMessage,ImageSendMessage
-
+import json
 import requests 
 from bs4 import BeautifulSoup
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")
@@ -50,10 +50,15 @@ def photo(name):
     rs = requests.session()
     res = rs.get(target_url, verify=False)
     res.encoding = 'utf-8'
-    soup = BeautifulSoup(res.text, 'html.parser')   
-    data=soup.select('div._9AhH0') 
+    soup = BeautifulSoup(res.text, 'html.parser')  
+    json_part = soup.find_all("script", type="text/javascript")[1].string
+ 
+# as json
+    json_part = json_part[json_part.find('=')+2:-1]
+    data = json.loads(json_part)
+    image_url = data['entry_data']['PostPage'][0]['graphql']['shortcode_media']['display_url'] 
     
-    return data
+    return image_url
 
 
 
