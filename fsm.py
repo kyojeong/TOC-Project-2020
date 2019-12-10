@@ -25,10 +25,11 @@ class TocMachine(GraphMachine):
         global t
         t = event.message.text
         return True
+    
     def on_enter_photo(self, event):
         reply_token = event.reply_token
-        a=photo(t)
-        send_image(reply_token,a)
+        #a=photo(t)
+        send_image(reply_token,'https://www.instagram.com/p/B5sPahmnh8i/')
         self.go_back()   
         
     def is_going_to_movie(self, event):
