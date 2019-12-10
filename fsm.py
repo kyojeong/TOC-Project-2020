@@ -21,7 +21,8 @@ class TocMachine(GraphMachine):
     
     def on_enter_photo(self, event):
         reply_token = event.reply_token
-        send_image(reply_token,"https://scontent-tpe1-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/c0.180.1440.1440a/s640x640/71719149_243909983238957_7365908731299268477_n.jpg?_nc_ht=scontent-tpe1-1.cdninstagram.com\u0026_nc_cat=109\u0026oh=0bac90671ca73283ac6a723e01aa15c5\u0026oe=5E6DED58")
+        a=photo()
+        send_text_message(reply_token,a)
         self.go_back()   
         
     def is_going_to_movie(self, event):
