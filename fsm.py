@@ -27,7 +27,7 @@ class TocMachine(GraphMachine):
         return True
     def on_enter_photo(self, event):
         reply_token = event.reply_token
-        a=husband(t)
+        a=photo(t)
         send_image(reply_token,a)
         self.go_back()   
         
