@@ -273,7 +273,7 @@ class TocMachine(GraphMachine):
     #銀座
     def is_going_to_a8(self, event):
         text = event.message.text
-        return text.lower()== "有計畫"
+        return text.lower()== "有計劃"
     def on_enter_a8(self, event):
         reply_token = event.reply_token
         text="你是銀座女子\n・會在意自己的一舉一動與說話方式\n・朋友常常諮詢自己的意見\n・個性很好、懂人情世故，但不太深入干涉別人私事\n・會仔細做人生規劃\n・氛圍很沈穩\n・不知道為什麼無法和喜歡的人交往順利\n・不擅長唸書，但很聰明"
