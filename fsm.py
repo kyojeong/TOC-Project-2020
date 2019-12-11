@@ -14,33 +14,7 @@ class TocMachine(GraphMachine):
         send_text_message(reply_token, "你好，我是東京女子診斷機器人，想知道你屬於哪個都市的女子類型嗎？？那就趕快輸入「東京女子診斷」，即可開始遊戲，輸入「我要看電影」，即可顯示最新電影資訊")        
         self.go_back()
 
-    def is_going_to_a(self, event):
-        text = event.message.text
-        return text== "1"
-
-    def on_enter_a(self, event):
-        reply_token = event.reply_token       
-        send_text_message(reply_token, "ok1")        
-        self.go_back()
-        
-    def is_going_to_b(self, event):
-        text = event.message.text
-        return text== "2"
-
-    def on_enter_b(self, event):
-        reply_token = event.reply_token       
-        send_text_message(reply_token, "ok2")        
-        self.go_back()
-        
-    def is_going_to_c(self, event):
-        text = event.message.text
-        return text== "3"
-
-    def on_enter_c(self, event):
-        reply_token = event.reply_token       
-        send_text_message(reply_token, "ok3")        
-        self.go_back()
-    
+  
     def is_going_to_movie(self, event):
         text = event.message.text
         return text== "我要看電影"
