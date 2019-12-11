@@ -15,16 +15,7 @@ class TocMachine(GraphMachine):
         self.go_back()
 
        
-    def is_going_to_photo(self, event):
-        text= event.message.text
-        return text=="我要看老公"
     
-    def on_enter_photo(self, event):
-        reply_token = event.reply_token
-        a=photo()
-        send_text_message(reply_token,a)
-        self.go_back()   
-        
     def is_going_to_movie(self, event):
         text = event.message.text
         return text== "我要看電影"

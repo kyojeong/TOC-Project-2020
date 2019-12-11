@@ -45,17 +45,6 @@ def movie():
     
     return content
 
-def photo(name):
-    target_url = 'https://www.instagram.com/yuchengenn'
-    rs = requests.session()
-    res = rs.get(target_url, verify=False)
-    res.encoding = 'utf-8'
-    soup = BeautifulSoup(res.text, 'lxml')  
-    data=soup.select('thumbnail_resources')
-    
-    
-    return data['src']
-
 
 
 """
