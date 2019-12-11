@@ -24,11 +24,6 @@ machine = TocMachine(
         {"trigger": "advance","source": "user","dest": "hello","conditions": "is_going_to_hello"},        
         {"trigger": "go_back", "source":"hello", "dest": "user"},
         
-        {"trigger": "advance","source": "user","dest": "a","conditions": "is_going_to_a"}, 
-        {"trigger": "advance","source": "a","dest": "b","conditions": "is_going_to_b"},
-        {"trigger": "advance","source": "b","dest": "c","conditions": "is_going_to_c"},
-        {"trigger": "go_back", "source":"c", "dest": "user"},
-        
         
         {"trigger": "advance","source": "user","dest": "movie","conditions": "is_going_to_movie"},        
         {"trigger": "go_back", "source":"movie", "dest": "user"},
