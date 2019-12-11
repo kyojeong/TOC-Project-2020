@@ -8,6 +8,7 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 from fsm import TocMachine
 from utils import send_text_message
+from graphviz import Digraph
 dotenv_path = os.path.join(os.path.dirname(__file__), 'example.env')
 load_dotenv(dotenv_path)
 
@@ -221,6 +222,11 @@ def webhook_handler():
 @app.route("/show-fsm", methods=["GET"])
 def show_fsm():
     machine.get_graph().draw("fsm.png", prog="dot", format="png")
+    g = Digraph('G', filename='hello.gv')
+
+    g.edge('Hello', 'World')
+
+    g.view()
     return send_file("fsm.png", mimetype="image/png")
 
 
