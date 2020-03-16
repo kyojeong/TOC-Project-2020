@@ -13,7 +13,7 @@ More details in the [Slides](https://hackmd.io/@TTW/ToC-2019-Project#) and [FAQ]
 
 ## final work
 ![fsm](./unnamed.jpg)
-![fsm](./unnamed (1).jpg)
+
 
 ### Prerequisite
 * Python 3.6
